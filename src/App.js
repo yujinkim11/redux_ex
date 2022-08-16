@@ -1,16 +1,18 @@
 import { useState } from "react";
 import "./App.css";
+import { useDispatch, useSelector } from "react-redux";
 
 function App() {
-  const [num, setNum] = useState(0);
+  const count = useSelector((state) => state.count);
+  const dispatch = useDispatch();
 
   const increase = () => {
-    setNum(num + 1);
+    dispatch({ type: "INCREMENT" });
   };
 
   return (
     <div>
-      <h1>{num}</h1>
+      <h1>{count}</h1>
       <button onClick={increase}>증가 +</button>
     </div>
   );
