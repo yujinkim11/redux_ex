@@ -17,6 +17,10 @@ function App() {
     dispatch({ type: "LOGIN", payload: { id: "yujin", password: "123" } });
   };
 
+  const decrease = () => {
+    dispatch({ type: "DECREASE", payload: { num: 3 } });
+  };
+
   return (
     <div>
       <h1>
@@ -24,6 +28,8 @@ function App() {
       </h1>
       <h1>{count}</h1>
       <button onClick={increase}>증가 +</button>
+      <button onClick={decrease}>감소 -</button>
+      <br />
       <button onClick={login}>Login</button>
       <Box />
     </div>
